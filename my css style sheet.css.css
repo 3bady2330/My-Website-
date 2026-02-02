@@ -1,0 +1,243 @@
+/* Base styles for all devices */
+body {
+    background-image: url(images/Background\ 3.avif);
+    width: 90%; 
+    max-width: 1000px; 
+    margin: 0 auto 2% auto; /* Top margin removed for sticky header */
+    border: 1px solid maroon;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    box-shadow: -3px -3px 15px rgba(0, 0, 255, 0.3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    color: #333;
+    padding-top: 80px; /* Space for sticky header */
+}
+
+/* --- Modern Header Styles --- */
+header {
+    background-color: rgba(85, 85, 85, 0.95); /* Semi-transparent */
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 2px solid maroon;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Consistent logo height */
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ddd;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    color: white;
+    background-color: rgba(128, 0, 128, 0.3); /* Subtle purple tint */
+    border-bottom: 3px solid purple;
+}
+
+nav a.active {
+    color: white;
+    border-bottom: 3px solid maroon;
+}
+
+p {
+    text-align: justify;
+    padding: 15px;
+    line-height: 1.6;
+}
+
+/* Images should be responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Table styles */
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* --- Enhanced Footer Styles --- */
+footer {
+    background-color: #444;
+    color: white;
+    padding: 40px 20px 20px;
+    text-align: left;
+    border-top: 4px solid maroon;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.footer-column h3 {
+    border-bottom: 2px solid maroon;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #eee;
+}
+
+.footer-column p, .footer-column address {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-style: normal;
+    padding: 0;
+}
+
+.footer-column address a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footer-column address a:hover {
+    text-decoration: underline;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    padding: 0;
+    margin-right: 12px;
+    background-color: transparent !important;
+}
+
+.social-links img {
+    width: 28px; 
+    height: 28px;
+    transition: transform 0.2s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid #666;
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Mobile specific overrides */
+@media screen and (max-width: 600px) {
+    body {
+        width: 95%;
+        padding-top: 120px; /* More space for stacked header on mobile */
+    }
+
+    header {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    header img, figure img {
+        width: auto !important;
+        height: 40px;
+    }
+
+    .footer-column {
+        flex: 100%;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        display: inline-block;
+    }
+
+    .social-links {
+        justify-content: center;
+        display: flex;
+    }
+}
